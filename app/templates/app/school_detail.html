@@ -1,0 +1,19 @@
+{% extends 'app/layout.html' %}
+{% block body %}
+<div class="container">
+  <h1>Schools Details</h1>
+  <ul>
+    <li>School Name: {{school.name}}</li>
+    <li>Principal : {{school.principal}}</li>
+    <li>Location : {{school.location}}</li>
+  </ul>
+    <h4> List of students in {{school.name}}</h4>
+    {% for student in school.students.all %}
+      <ul><li>{{student.name}}</li></ul>
+  {% endfor %}
+</div>
+<div class="container">
+  <p><a class="btn btn-warning" href="{% url 'update' pk=school.pk %}">Update</a>
+  <a class="btn btn-warning" href="{% url 'delete' pk=school.pk %}">Delete</a></p>
+</div>
+{% endblock %}

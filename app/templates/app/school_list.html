@@ -1,0 +1,8 @@
+{% extends 'app/layout.html' %}
+{% block body %}
+<h1>List of Schools</h1>
+{% for i in school_list %}
+<li><a href="{{i.id}}">{{i.name}}</a></li>
+{% endfor %}
+<p>To create another school into list use  create/ </p>
+{% endblock %}
